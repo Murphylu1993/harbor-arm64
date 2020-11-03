@@ -15,6 +15,7 @@ RUN tdnf install -y shadow gzip postgresql >> /dev/null\
     && tdnf clean all
 
 RUN tdnf erase -y toybox && tdnf install -y util-linux net-tools
+RUN chage -M 99999 root
 
 VOLUME /var/lib/postgresql/data
 
